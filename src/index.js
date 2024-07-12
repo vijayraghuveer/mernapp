@@ -21,7 +21,7 @@ import EditPost from './pages/EditPost';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/" ,
     element: <Layout/>,
     errorElement: <ErrorPage/>,
     children: [
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       {path: "posts/users/:id", element: <AuthorPosts/>},
       {path: "myposts/:id", element: <Dashboard/>},
       {path: "posts/:id/edit", element: <EditPost/>},
-      
+      {path: "/myfirstclient", element: <Home/>}
     ]
     
   }
