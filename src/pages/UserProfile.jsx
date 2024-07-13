@@ -25,7 +25,7 @@ const UserProfile = () => {
               accept='png, jpg, jpeg' />
               <label htmlFor="avatar"> <FaEdit/> </label>
             </form>
-            <buttton className="profile_avatar-btn"><FaCheck/></buttton>
+            <button className="profile_avatar-btn"><FaCheck/></button>
           </div> 
 
           <h1>Ernest Achiever</h1> 

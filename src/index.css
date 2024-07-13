@@ -471,7 +471,6 @@ input, select, textarea{
 .profile_avatar-btn{
     cursor: pointer;
     padding: 0;
-    
     background: var(--color-primary);
 }
 
@@ -601,7 +600,7 @@ h3 {
     cursor: pointer;
 }
 
-/* .posts_container{
+.posts_container{
     grid-template-columns: 1fr;
     gap: 1rem;
 }
@@ -640,5 +639,5 @@ h3 {
 
 .dashboard_post-thumbnail {
     width: 5rem;
-} */
+}
 
