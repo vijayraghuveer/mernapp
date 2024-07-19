@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; 
+import { UserContext } from '../context/userContext.js';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Uncategorized');
   const [description, setDescription] = useState('');
   const [thumbnail, setThumbnail] = useState('');
+  const [error, setError] = useState('');
+
+  const navigate = useNavigate();
+  
+  const { currentUser } = useContext(UserContext);
+  const token = currentUser?.token;
+
+  useEffect(() => {
+    if (!token) {
+      navigate('/login');
+    }
+  }, [token, navigate]);
 
   const modules = {
     toolbar: [
@@ -23,19 +38,39 @@ const CreatePost = () => {
     'bold', 'italic', 'underline', 'strike', 'blockquote',
     'list', 'bullet', 'indent',
     'link', 'image',
-    
   ];
 
   const POST_CATEGORIES = ["Agriculture", "Business", "Education", "Entertainment", "Art", "Investment", "Uncategorized", "Weather"];
+  
+  const createPost = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('category', category);
+    formData.append('description', description);
+    formData.append('thumbnail', thumbnail);
+
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/posts`, formData, {withCredentials: true,
+        headers: {
+          
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      if(response.status == 201){
+        return navigate('/')
+      }
+    } catch (err) {
+      setError(err.response.data.message);
+    }
+  }
 
   return (
     <section className="create-post">
       <div className="container">
         <h2>Create Post</h2>
-        <p className="form_error-message">
-          This is an error message
-        </p>
-        <form className="form create-post_form">
+        {error && <p className="error">{error}</p>}
+        <form className="form create-post_form" onSubmit={createPost}>
           <input
             type="text"
             placeholder='Title'
@@ -62,6 +97,6 @@ const CreatePost = () => {
       </div>
     </section>
   );
-};
+}
 
-export default CreatePost
+export default CreatePost;

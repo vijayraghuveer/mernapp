@@ -633,6 +633,7 @@ input, select, textarea{
     
     .dashboard_post{
         flex-direction: column;
+        gap: 0;
     }
     
     .dashboard_post-info{
@@ -644,3 +645,18 @@ input, select, textarea{
     }
 }
 
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    background: var(--color-bg);
+}
+
+.loader_image {
+   width: 4.5rem;
+   aspect-ratio: 1/1; 
+}
