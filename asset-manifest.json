@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/myfirstclient/static/css/main.67a89b5c.css",
-    "main.js": "/myfirstclient/static/js/main.12e0be8a.js",
-    "static/js/453.e3f81731.chunk.js": "/myfirstclient/static/js/453.e3f81731.chunk.js",
-    "static/media/logo2.png": "/myfirstclient/static/media/logo2.414a422240a66bd4dc40.png",
-    "static/media/loading.gif": "/myfirstclient/static/media/loading.350535603fc46ab1b99d.gif",
-    "index.html": "/myfirstclient/index.html",
-    "main.67a89b5c.css.map": "/myfirstclient/static/css/main.67a89b5c.css.map",
-    "main.12e0be8a.js.map": "/myfirstclient/static/js/main.12e0be8a.js.map",
-    "453.e3f81731.chunk.js.map": "/myfirstclient/static/js/453.e3f81731.chunk.js.map"
+    "main.css": "/mernapp/static/css/main.67a89b5c.css",
+    "main.js": "/mernapp/static/js/main.bdb94f43.js",
+    "static/js/453.e3f81731.chunk.js": "/mernapp/static/js/453.e3f81731.chunk.js",
+    "static/media/logo2.png": "/mernapp/static/media/logo2.414a422240a66bd4dc40.png",
+    "static/media/loading.gif": "/mernapp/static/media/loading.350535603fc46ab1b99d.gif",
+    "index.html": "/mernapp/index.html",
+    "main.67a89b5c.css.map": "/mernapp/static/css/main.67a89b5c.css.map",
+    "main.bdb94f43.js.map": "/mernapp/static/js/main.bdb94f43.js.map",
+    "453.e3f81731.chunk.js.map": "/mernapp/static/js/453.e3f81731.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.67a89b5c.css",
-    "static/js/main.12e0be8a.js"
+    "static/js/main.bdb94f43.js"
   ]
 }
